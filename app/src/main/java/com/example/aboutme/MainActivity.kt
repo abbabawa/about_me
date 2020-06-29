@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: MylayoutBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(R.layout.mylayout)
+        binding = DataBindingUtil.setContentView(this, R.layout.mylayout)
 
 //        findViewById<Button>(R.id.doneButton).setOnClickListener {
 //            addNickname(it)
@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     fun addNickname(view: View){
         binding.textView2.text = binding.nicknameInput.text.toString()
+        invalidateAll()
         binding.textView2.visibility = View.VISIBLE
         binding.nicknameInput.visibility = View.GONE
 
